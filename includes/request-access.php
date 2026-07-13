@@ -1,7 +1,7 @@
 <section class="relative overflow-hidden bg-[#F7F8FA] py-16 sm:py-20 lg:py-24" id="request-access">
   <div class="relative w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
 
-    <div class="access-card mx-auto w-full max-w-2xl px-8 sm:px-12 py-10 sm:py-12 text-center">
+    <div class="access-card mx-auto w-full max-w-2xl px-8 sm:px-12 py-10 sm:py-12 text-center" data-reveal="scale" data-reveal-delay="0">
       <h2 class="text-hp-dark text-3xl sm:text-4xl font-bold tracking-tight mb-3">
         Witness the Future
       </h2>

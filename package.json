@@ -1,4 +1,11 @@
 {
+  "name": "hip-website",
+  "version": "1.0.0",
+  "description": "HIP Website",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./output.css --watch"
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.2",
     "tailwindcss": "^4.3.2"

@@ -5,17 +5,19 @@
   ></div>
 
   <div class="relative w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 text-center">
-    <h2 class="text-white text-5xl sm:text-5xl lg:text-[6.5rem] font-medium tracking-tight leading-tight mb-4">
+    <h2 class="text-white text-5xl sm:text-5xl lg:text-[6.5rem] font-medium tracking-tight leading-tight mb-4" data-reveal="up" data-reveal-delay="0">
       Witness the Future
     </h2>
 
-    <p class="text-white/90 text-xl sm:text-2xl max-w-2xl mx-auto leading-relaxed mb-8 lg:mb-10">
+    <p class="text-white/90 text-xl sm:text-2xl max-w-2xl mx-auto leading-relaxed mb-8 lg:mb-10" data-reveal="up" data-reveal-delay="100">
       Schedule a personalized walkthrough of the HIP ecosystem with one of our Intelligence Architects.
     </p>
 
     <a
       href="#"
       class="inline-flex items-center gap-2.5 bg-white text-hp-dark text-sm font-semibold tracking-[0.12em] uppercase px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors mb-12 lg:mb-16"
+      data-reveal="up"
+      data-reveal-delay="180"
     >
       Book a Demo
       <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -24,7 +26,7 @@
     </a>
 
     <!-- Preview card -->
-    <div class="cta-preview mx-auto w-full max-w-3xl bg-white rounded-t-[1.75rem] sm:rounded-t-[2rem] shadow-[0_-8px_40px_rgba(0,0,0,0.12)] overflow-hidden">
+    <div class="cta-preview mx-auto w-full max-w-3xl bg-white rounded-t-[1.75rem] sm:rounded-t-[2rem] shadow-[0_-8px_40px_rgba(0,0,0,0.12)] overflow-hidden" data-reveal="up" data-reveal-delay="280">
       <div class="flex items-center justify-between px-5 sm:px-7 pt-5 pb-4">
         <div class="flex items-center gap-3 min-w-0">
           <div

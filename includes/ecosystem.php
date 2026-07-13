@@ -1,7 +1,7 @@
 <section class=" flex justify-center items-center   overflow-hidden bg-[#F7F8FA] py-16 sm:py-20 lg:py-24" id="ecosystem">
   <div class="container w-full ">
 
-    <div class="text-center mb-10 lg:mb-14">
+    <div class="text-center mb-10 lg:mb-14" data-reveal="up" data-reveal-delay="0">
       <p class="text-[#41BCEC] text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-3">
         Our Ecosystem
       </p>
@@ -13,7 +13,7 @@
     <div class="eco-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
 
       <!-- Predictive Patient Intelligence — spans 2 -->
-      <article class="eco-card lg:col-span-2 p-6 sm:p-8 flex flex-col justify-between min-h-[200px]">
+      <article class="eco-card lg:col-span-2 p-6 sm:p-8 flex flex-col justify-between min-h-[200px]" data-reveal="up" data-reveal-delay="60">
         <div class="eco-icon mb-6" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <circle cx="12" cy="8" r="3.25"/>
@@ -33,7 +33,7 @@
       </article>
 
       <!-- HIP Coins -->
-      <article class="eco-card p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[200px]">
+      <article class="eco-card p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[200px]" data-reveal="up" data-reveal-delay="120">
         <div class="eco-icon eco-icon-lg mb-5" aria-hidden="true">
           <svg class="w-7 h-7 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <rect x="3" y="6" width="18" height="12" rx="2"/>
@@ -46,7 +46,7 @@
       </article>
 
       <!-- White-label App -->
-      <article class="eco-card p-6 sm:p-8 flex flex-col justify-between min-h-[210px]">
+      <article class="eco-card p-6 sm:p-8 flex flex-col justify-between min-h-[210px]" data-reveal="up" data-reveal-delay="80">
         <div>
           <h3 class="text-hp-dark text-3xl font-medium tracking-tight mb-1.5">White-label App</h3>
           <p class="text-hp-muted text-base  leading-relaxed">
@@ -59,7 +59,7 @@
       </article>
 
       <!-- HIPAA Secure -->
-      <article class="eco-card p-6 sm:p-8 flex flex-col justify-between min-h-[210px]">
+      <article class="eco-card p-6 sm:p-8 flex flex-col justify-between min-h-[210px]" data-reveal="up" data-reveal-delay="140">
         <div>
           <h3 class="text-hp-dark text-3xl font-medium tracking-tight mb-1.5">HIPAA Secure</h3>
           <p class="text-hp-muted text-base  leading-relaxed">
@@ -74,7 +74,7 @@
       </article>
 
       <!-- Telehealth 2.0 -->
-      <article class="eco-card eco-card-tint p-6 sm:p-8 flex flex-col justify-between min-h-[210px]">
+      <article class="eco-card eco-card-tint p-6 sm:p-8 flex flex-col justify-between min-h-[210px]" data-reveal="up" data-reveal-delay="200">
         <div>
           <h3 class="text-hp-dark text-3xl font-medium tracking-tight mb-1.5">Telehealth 2.0</h3>
           <p class="text-hp-muted text-base  leading-relaxed">
@@ -90,7 +90,7 @@
       </article>
 
       <!-- ROI Analytics -->
-      <article class="eco-card p-6 sm:p-8 min-h-[180px]">
+      <article class="eco-card p-6 sm:p-8 min-h-[180px]" data-reveal="up" data-reveal-delay="100">
         <div class="eco-icon mb-5" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <path d="M4 19V5M4 19h16" stroke-linecap="round"/>
@@ -104,7 +104,7 @@
       </article>
 
       <!-- Smart Scheduling -->
-      <article class="eco-card p-6 sm:p-8 min-h-[180px]">
+      <article class="eco-card p-6 sm:p-8 min-h-[180px]" data-reveal="up" data-reveal-delay="160">
         <div class="eco-icon mb-5" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <rect x="3.5" y="5" width="17" height="15" rx="2"/>
@@ -118,7 +118,7 @@
       </article>
 
       <!-- API First -->
-      <article class="eco-card eco-card-blue p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[180px]">
+      <article class="eco-card eco-card-blue p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[180px]" data-reveal="up" data-reveal-delay="220">
         <h3 class="text-white text-3xl font-medium tracking-tight mb-1.5">API First</h3>
         <p class="text-white/90 text-base sm:text-[15px] leading-relaxed">Connects with 200+ EHRs</p>
       </article>

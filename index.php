@@ -22,6 +22,7 @@
     <?php include __DIR__ . '/includes/pricing.php'; ?>
     <?php include __DIR__ . '/includes/request-access.php'; ?>
     <?php include __DIR__ . '/includes/footer.php'; ?>
+    <script src="./assets/js/reveal.js" defer></script>
 </body>
 
 </html>

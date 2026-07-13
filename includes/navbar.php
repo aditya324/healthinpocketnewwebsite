@@ -1,4 +1,4 @@
-<header class="bg-white border-b-2 border-hp-blue">
+<header class="bg-white border-b-2 border-hp-blue" data-reveal="fade" data-reveal-load data-reveal-delay="0">
   <nav class="max-w-7xl mx-auto px-6 lg:px-8" aria-label="Main navigation">
     <div class="grid grid-cols-[1fr_auto_1fr] items-center h-[72px]">
 

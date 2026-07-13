@@ -1,14 +1,14 @@
 <section class="relative overflow-hidden bg-[#F7F8FA] py-16 sm:py-20 lg:py-24" id="pricing">
   <div class="relative w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
 
-    <h2 class="text-center text-hp-dark text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight mb-12 lg:mb-16">
+    <h2 class="text-center text-hp-dark text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight mb-12 lg:mb-16" data-reveal="up" data-reveal-delay="0">
       Elite Plans
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-6xl mx-auto">
 
       <!-- Starter -->
-      <article class="plan-card flex flex-col p-7 sm:p-8">
+      <article class="plan-card flex flex-col p-7 sm:p-8" data-reveal="up" data-reveal-delay="80">
         <p class="text-gray-400 text-xs font-semibold tracking-[0.18em] uppercase mb-4">Starter</p>
         <p class="text-hp-dark mb-8">
           <span class="text-4xl sm:text-5xl font-bold tracking-tight">499</span>
@@ -48,7 +48,7 @@
       </article>
 
       <!-- Growth (featured) -->
-      <article class="plan-card plan-card-featured relative flex flex-col p-7 sm:p-8 md:-mt-3 md:mb-[-0.75rem]">
+      <article class="plan-card plan-card-featured relative flex flex-col p-7 sm:p-8 md:-mt-3 md:mb-[-0.75rem]" data-reveal="up" data-reveal-delay="160">
         <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#41BCEC] text-white text-[10px] sm:text-xs font-semibold tracking-[0.14em] uppercase px-3.5 py-1.5 rounded-full whitespace-nowrap">
           Most Popular
         </span>
@@ -100,7 +100,7 @@
       </article>
 
       <!-- Enterprise -->
-      <article class="plan-card flex flex-col p-7 sm:p-8">
+      <article class="plan-card flex flex-col p-7 sm:p-8" data-reveal="up" data-reveal-delay="240">
         <p class="text-gray-400 text-xs font-semibold tracking-[0.18em] uppercase mb-4">Enterprise</p>
         <p class="text-hp-dark text-4xl sm:text-5xl font-bold tracking-tight mb-8">Custom</p>
 

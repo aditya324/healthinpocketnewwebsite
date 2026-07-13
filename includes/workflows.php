@@ -5,7 +5,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
       <!-- Left: copy -->
-      <div>
+      <div data-reveal="left" data-reveal-delay="0">
         <div class="inline-flex items-center px-3.5 py-1 rounded-full border border-hp-dark/80 text-hp-dark text-sm font-medium mb-4">
           Workflows
         </div>

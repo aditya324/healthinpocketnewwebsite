@@ -2,7 +2,7 @@
   <div class="container w-full lg:px-14 max-w-7xl ">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-      <div>
+      <div data-reveal="left" data-reveal-delay="0">
         <h2 class="text-hp-dark  text-3xl sm:text-4xl lg:text-[2.5rem] font-semibold tracking-tight mb-4">
           Impact Calculator
         </h2>
@@ -11,7 +11,7 @@
         </p>
       </div>
 
-      <div class="impact-card w-full max-w-xl lg:max-w-none lg:ml-auto p-6 sm:p-8">
+      <div class="impact-card w-full max-w-xl lg:max-w-none lg:ml-auto p-6 sm:p-8" data-reveal="right" data-reveal-delay="120">
         <label for="patient-slider" class="block text-hp-dark text-xs font-semibold tracking-[0.16em] uppercase mb-5">
           Monthly Patients
         </label>
