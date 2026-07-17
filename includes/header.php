@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthin Pocket</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+
+<body class="font-sans antialiased">
+
+<!-- ============ NAVBAR ============ -->
 <header class="bg-white border-b-2 border-hp-blue" data-reveal="fade" data-reveal-load data-reveal-delay="0">
   <nav class="max-w-7xl mx-auto px-6 lg:px-8" aria-label="Main navigation">
     <div class="grid grid-cols-[1fr_auto_1fr] items-center h-[72px]">
@@ -84,18 +100,3 @@
     </div>
   </nav>
 </header>
-
-<script>
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const iconOpen = document.getElementById('menu-icon-open');
-  const iconClose = document.getElementById('menu-icon-close');
-
-  menuBtn?.addEventListener('click', () => {
-    const isOpen = !mobileMenu.classList.contains('hidden');
-    mobileMenu.classList.toggle('hidden');
-    iconOpen.classList.toggle('hidden', !isOpen);
-    iconClose.classList.toggle('hidden', isOpen);
-    menuBtn.setAttribute('aria-expanded', String(!isOpen));
-  });
-</script>
