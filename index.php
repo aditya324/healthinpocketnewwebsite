@@ -946,9 +946,9 @@
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-8 lg:mt-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-8 lg:mt-10 items-start">
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="60">
+      <details class="group self-start bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="60">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
           <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is Health in Pocket cloud-based?</span>
           <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -960,7 +960,7 @@
         </p>
       </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="100">
+      <details class="group self-start bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="100">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
           <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Can it integrate with existing systems?</span>
           <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -972,7 +972,7 @@
         </p>
       </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="140">
+      <details class="group self-start bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="140">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
           <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">How is patient data protected?</span>
           <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -984,7 +984,7 @@
         </p>
       </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="180">
+      <details class="group self-start bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="180">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
           <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">How long does implementation take?</span>
           <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -996,7 +996,7 @@
         </p>
       </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="220">
+      <details class="group self-start bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="220">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
           <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is training included?</span>
           <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -1008,7 +1008,7 @@
         </p>
       </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="260">
+      <details class="group self-start bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="260">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
           <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Can multiple branches share one platform?</span>
           <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -1020,7 +1020,7 @@
         </p>
       </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="300">
+      <details class="group self-start bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="300">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
           <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is this really white-labelled? Will patients see your brand or mine?</span>
           <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -1032,7 +1032,7 @@
         </p>
       </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="340">
+      <details class="group self-start bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="340">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
           <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">We already have an HIS/HMS. Will this conflict?</span>
           <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -1044,7 +1044,7 @@
         </p>
       </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="380">
+      <details class="group self-start bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="380">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
           <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">How long does it take to go live?</span>
           <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -1056,7 +1056,7 @@
         </p>
       </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="420">
+      <details class="group self-start bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="420">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
           <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">What is the investment involved?</span>
           <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
@@ -1068,7 +1068,7 @@
         </p>
       </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)] lg:col-span-2" data-reveal="up" data-reveal-delay="460">
+      <details class="group self-start bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)] lg:col-span-2" data-reveal="up" data-reveal-delay="460">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
           <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is patient data secure and DPDP compliant?</span>
           <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
