@@ -936,6 +936,27 @@
 </section> -->
 
 <!-- ============ FAQ ============ -->
+<style>
+  #faq .faq-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    align-items: start;
+    margin-top: 0.75rem;
+  }
+  #faq .faq-row:first-of-type { margin-top: 0; }
+  @media (min-width: 1024px) {
+    #faq .faq-row { grid-template-columns: 1fr 1fr; }
+  }
+  #faq .faq-row > details,
+  #faq .faq-full {
+    height: fit-content;
+    align-self: start;
+  }
+  #faq details summary {
+    min-height: 4.25rem;
+  }
+</style>
 <section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#F7FAFD_45%,#EDF5FB_100%)] py-10 sm:py-12 lg:py-14" id="faq">
   <div class="container w-full max-w-5xl mx-auto px-6 sm:px-10">
 
@@ -946,139 +967,151 @@
       </h2>
     </div>
 
-    <div class="faq-grid mt-8 lg:mt-10">
+    <div class="mt-8 lg:mt-10">
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="60">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-          <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is Health in Pocket cloud-based?</span>
-          <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
-          </svg>
-        </summary>
-        <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
-          Yes. The entire platform runs securely in the cloud — accessible from anywhere, on any device. No on-premise servers required.
-        </p>
-      </details>
+      <div class="faq-row">
+        <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="60">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
+            <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is Health in Pocket cloud-based?</span>
+            <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
+            Yes. The entire platform runs securely in the cloud — accessible from anywhere, on any device. No on-premise servers required.
+          </p>
+        </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="100">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-          <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Can it integrate with existing systems?</span>
-          <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
-          </svg>
-        </summary>
-        <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
-          Yes. Health in Pocket supports integrations with existing healthcare workflows, lab equipment, and third-party systems including payment gateways.
-        </p>
-      </details>
+        <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="100">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
+            <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Can it integrate with existing systems?</span>
+            <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
+            Yes. Health in Pocket supports integrations with existing healthcare workflows, lab equipment, and third-party systems including payment gateways.
+          </p>
+        </details>
+      </div>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="140">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-          <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">How is patient data protected?</span>
-          <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
-          </svg>
-        </summary>
-        <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
-          We follow enterprise-grade security standards — encrypted storage, role-based access controls, and automated secure cloud backups for all data.
-        </p>
-      </details>
+      <div class="faq-row">
+        <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="140">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
+            <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">How is patient data protected?</span>
+            <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
+            We follow enterprise-grade security standards — encrypted storage, role-based access controls, and automated secure cloud backups for all data.
+          </p>
+        </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="180">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-          <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">How long does implementation take?</span>
-          <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
-          </svg>
-        </summary>
-        <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
-          It depends on the size of your organization. Our team delivers a structured, milestone-based deployment with dedicated onboarding support throughout.
-        </p>
-      </details>
+        <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="180">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
+            <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">How long does implementation take?</span>
+            <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
+            It depends on the size of your organization. Our team delivers a structured, milestone-based deployment with dedicated onboarding support throughout.
+          </p>
+        </details>
+      </div>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="220">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-          <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is training included?</span>
-          <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
-          </svg>
-        </summary>
-        <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
-          Yes. Every implementation includes comprehensive onboarding sessions, user training, and dedicated support to help your teams get started confidently.
-        </p>
-      </details>
+      <div class="faq-row">
+        <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="220">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
+            <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is training included?</span>
+            <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
+            Yes. Every implementation includes comprehensive onboarding sessions, user training, and dedicated support to help your teams get started confidently.
+          </p>
+        </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="260">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-          <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Can multiple branches share one platform?</span>
-          <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
-          </svg>
-        </summary>
-        <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
-          Absolutely — Health in Pocket is built for single clinics, multi-specialty hospitals, and large multi-location networks, all from one centralized platform.
-        </p>
-      </details>
+        <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="260">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
+            <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Can multiple branches share one platform?</span>
+            <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
+            Absolutely — Health in Pocket is built for single clinics, multi-specialty hospitals, and large multi-location networks, all from one centralized platform.
+          </p>
+        </details>
+      </div>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="300">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-          <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is this really white-labelled? Will patients see your brand or mine?</span>
-          <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
-          </svg>
-        </summary>
-        <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
-          100% your brand. Your logo, your colours, your hospital name — everywhere in the app. Patients will never know Health In Pocket powers it. It's your app, built on our infrastructure.
-        </p>
-      </details>
+      <div class="faq-row">
+        <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="300">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
+            <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is this really white-labelled? Will patients see your brand or mine?</span>
+            <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
+            100% your brand. Your logo, your colours, your hospital name — everywhere in the app. Patients will never know Health In Pocket powers it. It's your app, built on our infrastructure.
+          </p>
+        </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="340">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-          <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">We already have an HIS/HMS. Will this conflict?</span>
-          <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
-          </svg>
-        </summary>
-        <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
-          Health In Pocket is not a replacement for your Hospital Information System. It sits on top as a patient-facing relationship and retention layer — the piece most HMS systems don't have. Integration options are discussed on the strategy call.
-        </p>
-      </details>
+        <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="340">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
+            <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">We already have an HIS/HMS. Will this conflict?</span>
+            <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
+            Health In Pocket is not a replacement for your Hospital Information System. It sits on top as a patient-facing relationship and retention layer — the piece most HMS systems don't have. Integration options are discussed on the strategy call.
+          </p>
+        </details>
+      </div>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="380">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-          <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">How long does it take to go live?</span>
-          <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
-          </svg>
-        </summary>
-        <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
-          Most hospitals go live within 30 days of signing. Our team handles setup, onboarding and staff training. You don't need a technical team internally.
-        </p>
-      </details>
+      <div class="faq-row">
+        <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="380">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
+            <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">How long does it take to go live?</span>
+            <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
+            Most hospitals go live within 30 days of signing. Our team handles setup, onboarding and staff training. You don't need a technical team internally.
+          </p>
+        </details>
 
-      <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="420">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-          <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">What is the investment involved?</span>
-          <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
-          </svg>
-        </summary>
-        <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
-          Investment is based on your hospital's size, number of branches and modules required. We share exact pricing on the strategy call — after understanding your specific situation. There is no one-size-fits-all quote.
-        </p>
-      </details>
+        <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="420">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
+            <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">What is the investment involved?</span>
+            <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
+            Investment is based on your hospital's size, number of branches and modules required. We share exact pricing on the strategy call — after understanding your specific situation. There is no one-size-fits-all quote.
+          </p>
+        </details>
+      </div>
 
-      <details class="faq-wide group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="460">
-        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-          <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is patient data secure and DPDP compliant?</span>
-          <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
-          </svg>
-        </summary>
-        <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
-          Yes. Health In Pocket is built with Indian data protection guidelines in mind. Patient consent is captured digitally, data is stored securely, and your hospital remains in control of all patient information.
-        </p>
-      </details>
+      <div class="faq-row" style="margin-top: 0.75rem;">
+        <details class="faq-full group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" style="grid-column: 1 / -1;" data-reveal="up" data-reveal-delay="460">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
+            <span class="text-hp-dark text-sm sm:text-[15px] font-semibold">Is patient data secure and DPDP compliant?</span>
+            <svg class="w-4 h-4 text-hp-dark shrink-0 transition-transform duration-200 group-open:rotate-45" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M8 3v10M3 8h10" stroke-linecap="round"/>
+            </svg>
+          </summary>
+          <p class="px-6 sm:px-7 pb-5 -mt-1 text-hp-muted text-sm leading-relaxed">
+            Yes. Health In Pocket is built with Indian data protection guidelines in mind. Patient consent is captured digitally, data is stored securely, and your hospital remains in control of all patient information.
+          </p>
+        </details>
+      </div>
 
     </div>
 
