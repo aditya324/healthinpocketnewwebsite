@@ -46,7 +46,7 @@
             <li class="bg-white rounded-lg shadow-lg border border-gray-100 py-2">
               <a href="#" class="block px-4 py-2 text-sm text-hp-dark hover:bg-hp-blue/5 hover:text-hp-blue transition-colors">Services</a>
               <a href="#" class="block px-4 py-2 text-sm text-hp-dark hover:bg-hp-blue/5 hover:text-hp-blue transition-colors">Blog</a>
-              <a href="#" class="block px-4 py-2 text-sm text-hp-dark hover:bg-hp-blue/5 hover:text-hp-blue transition-colors">FAQ</a>
+              <a href="#faq" class="block px-4 py-2 text-sm text-hp-dark hover:bg-hp-blue/5 hover:text-hp-blue transition-colors">FAQ</a>
             </li>
           </ul>
         </li>
@@ -87,7 +87,7 @@
             <ul class="pl-4 pb-2">
               <li><a href="#" class="block py-2 text-sm text-hp-dark hover:text-hp-blue">Services</a></li>
               <li><a href="#" class="block py-2 text-sm text-hp-dark hover:text-hp-blue">Blog</a></li>
-              <li><a href="#" class="block py-2 text-sm text-hp-dark hover:text-hp-blue">FAQ</a></li>
+              <li><a href="#faq" class="block py-2 text-sm text-hp-dark hover:text-hp-blue">FAQ</a></li>
             </ul>
           </details>
         </li>
