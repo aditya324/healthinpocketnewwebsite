@@ -1,6 +1,6 @@
 <!-- ============ FOOTER ============ -->
 <footer class="bg-[#157AC0] text-white" id="footer">
-  <div class="w-full container mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 py-12 sm:py-14 lg:py-16">
+  <div class="w-full container mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 py-10 sm:py-12 lg:py-14">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8" data-reveal="up" data-reveal-delay="0">
 
       <div class="max-w-xs">

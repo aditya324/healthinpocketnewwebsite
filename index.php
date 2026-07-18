@@ -1,7 +1,7 @@
 <?php include __DIR__ . '/includes/header.php'; ?>
 
 <!-- ============ HERO ============ -->
-<section class="relative overflow-hidden bg-white py-16 lg:py-24" id="hero">
+<section class="relative overflow-hidden bg-white py-10 lg:py-20" id="hero">
 
   <!-- Decorative rings (bottom-left) -->
   <img src="./assets/images/rings.png" alt="" aria-hidden="true"
@@ -14,7 +14,7 @@
   <div class="relative max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1fr_1.25fr] items-center gap-12 lg:gap-8">
 
     <!-- Left: content -->
-    <div class="flex flex-col  lg:items-start text-center lg:text-left gap-7 lg:gap-8">
+    <div class="flex flex-col lg:items-start text-center lg:text-left gap-4 lg:gap-5">
 
       <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-gray-400/60 text-hp-dark text-[15px] font-medium" data-reveal="up" data-reveal-load data-reveal-delay="0">
         <svg class="w-4 h-4 shrink-0" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -51,7 +51,7 @@
 </section>
 
 <!-- ============ APP SHOWCASE ============ -->
-<section class="app-showcase relative overflow-hidden bg-white py-10 " id="app-showcase">
+<section class="app-showcase relative overflow-hidden bg-white py-8" id="app-showcase">
   <div class="showcase-glow absolute inset-0 pointer-events-none" aria-hidden="true"></div>
 
   <div class="relative max-w-6xl mx-auto px-6 lg:px-8 mt-10">
@@ -126,7 +126,7 @@
 </section>
 
 <!-- ============ PLATFORM ============ -->
-<section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#F7FAFD_45%,#EDF5FB_100%)] py-16 sm:py-20 lg:py-24" id="platform">
+<section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#F7FAFD_45%,#EDF5FB_100%)] py-10 sm:py-12 lg:py-14" id="platform">
   <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full  opacity-70 pointer-events-none" aria-hidden="true"></div>
 
   <!-- Rings straddling the seam: top halves (continue in workflows below) -->
@@ -137,7 +137,7 @@
 
   <div class="relative w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
 
-    <div class="text-center mb-10 lg:mb-14" data-reveal="up" data-reveal-delay="0">
+    <div class="text-center mb-8 lg:mb-10" data-reveal="up" data-reveal-delay="0">
       <h2 class="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold tracking-tight leading-tight">
         <span class="block text-hp-dark">Everything Your Hospital Needs.</span>
         <span class="block text-hp-blue">One Connected Platform.</span>
@@ -147,22 +147,22 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 max-w-6xl mx-auto">
 
       <article class="bg-white/40 backdrop-blur-md border border-white/60 rounded-2xl shadow-[0_8px_30px_rgba(16,24,40,0.08)] p-8 flex flex-col items-center text-center" data-reveal="up" data-reveal-delay="60">
-        <img src="./assets/icons/Background.png" alt="" aria-hidden="true" class="w-16 h-16 rounded-xl mb-5">
+        <img src="./assets/icons/Background.png" alt="" aria-hidden="true" class="w-16 h-16 rounded-xl mb-4">
         <h3 class="text-hp-dark text-base sm:text-lg font-semibold tracking-tight">Multi-Speciality</h3>
       </article>
 
       <article class="bg-white/40 backdrop-blur-md border border-white/60 rounded-2xl shadow-[0_8px_30px_rgba(16,24,40,0.08)] p-8 flex flex-col items-center text-center" data-reveal="up" data-reveal-delay="140">
-        <img src="./assets/icons/Background2.png" alt="" aria-hidden="true" class="w-16 h-16 rounded-xl mb-5">
+        <img src="./assets/icons/Background2.png" alt="" aria-hidden="true" class="w-16 h-16 rounded-xl mb-4">
         <h3 class="text-hp-dark text-base sm:text-lg font-semibold tracking-tight">Super Speciality</h3>
       </article>
 
       <article class="bg-white/40 backdrop-blur-md border border-white/60 rounded-2xl shadow-[0_8px_30px_rgba(16,24,40,0.08)] p-8 flex flex-col items-center text-center" data-reveal="up" data-reveal-delay="220">
-        <img src="./assets/icons/Background3.png" alt="" aria-hidden="true" class="w-16 h-16 rounded-xl mb-5">
+        <img src="./assets/icons/Background3.png" alt="" aria-hidden="true" class="w-16 h-16 rounded-xl mb-4">
         <h3 class="text-hp-dark text-base sm:text-lg font-semibold tracking-tight">Clinics</h3>
       </article>
 
       <article class="bg-white/40 backdrop-blur-md border border-white/60 rounded-2xl shadow-[0_8px_30px_rgba(16,24,40,0.08)] p-8 flex flex-col items-center text-center" data-reveal="up" data-reveal-delay="300">
-        <img src="./assets/icons/Background4.png" alt="" aria-hidden="true" class="w-16 h-16 rounded-xl mb-5">
+        <img src="./assets/icons/Background4.png" alt="" aria-hidden="true" class="w-16 h-16 rounded-xl mb-4">
         <h3 class="text-hp-dark text-base sm:text-lg font-semibold tracking-tight">Diagnostic Centers</h3>
       </article>
 
@@ -171,7 +171,7 @@
 </section>
 
 <!-- ============ WORKFLOWS ============ -->
-<section class="relative overflow-hidden bg-white py-14 lg:py-20" id="workflows">
+<section class="relative overflow-hidden bg-white py-10 lg:py-14" id="workflows">
 
   <!-- Rings straddling the seam: bottom halves (continue from platform above) -->
   <img src="./assets/images/rings.png" alt="" aria-hidden="true"
@@ -184,20 +184,20 @@
 
       <!-- Left: copy -->
       <div data-reveal="left" data-reveal-delay="0">
-        <div class="inline-flex items-center px-3.5 py-1 rounded-full border border-hp-dark/80 text-hp-dark text-sm font-medium mb-4">
+        <div class="inline-flex items-center px-3.5 py-1 rounded-full border border-hp-dark/80 text-hp-dark text-sm font-medium mb-3">
           Workflows
         </div>
 
-        <h2 class="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold leading-tight tracking-tight mb-4">
+        <h2 class="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold leading-tight tracking-tight mb-3">
           <span class="block text-hp-dark">Healthcare Has Changed.</span>
           <span class="block text-hp-blue">Hospital Software Should Too.</span>
         </h2>
 
-        <p class="text-hp-muted text-base leading-relaxed mb-5 max-w-lg">
+        <p class="text-hp-muted text-base leading-relaxed mb-4 max-w-lg">
           HealthInPocket brings everything together in one intelligent platform &mdash; helping hospitals build lasting patient relationships and achieve sustainable growth.
         </p>
 
-        <ul class="flex flex-wrap gap-x-6 gap-y-2 mb-8">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 mb-6">
           <li class="flex items-center gap-2.5 text-hp-dark text-sm sm:text-[15px] font-medium">
             <span class="flex items-center justify-center w-5 h-5 rounded-full bg-gray-100 text-gray-400 shrink-0" aria-hidden="true">
               <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
@@ -264,7 +264,7 @@
 </section>
 
 <!-- ============ CTA ============ -->
-<section class="relative overflow-hidden bg-[#41BCEC] pt-16 sm:pt-20 lg:pt-24" id="cta">
+<section class="relative overflow-hidden bg-[#41BCEC] pt-10 sm:pt-12 lg:pt-14" id="cta">
   <div
     class="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,#41BCEC_0%,#157AC0_100%)]"
     aria-hidden="true"
@@ -275,13 +275,13 @@
       Witness the Future
     </h2>
 
-    <p class="text-white/90 text-xl sm:text-2xl max-w-2xl mx-auto leading-relaxed mb-8 lg:mb-10" data-reveal="up" data-reveal-delay="100">
+    <p class="text-white/90 text-xl sm:text-2xl max-w-2xl mx-auto leading-relaxed mb-6 lg:mb-7" data-reveal="up" data-reveal-delay="100">
       Schedule a personalized walkthrough of the HIP ecosystem with one of our Intelligence Architects.
     </p>
 
     <a
       href="#"
-      class="inline-flex items-center gap-2.5 bg-white text-hp-dark text-sm font-semibold tracking-[0.12em] uppercase px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors mb-12 lg:mb-16"
+      class="inline-flex items-center gap-2.5 bg-white text-hp-dark text-sm font-semibold tracking-[0.12em] uppercase px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors mb-10 lg:mb-12"
       data-reveal="up"
       data-reveal-delay="180"
     >
@@ -320,11 +320,11 @@
 </section>
 
 <!-- ============ ECOSYSTEM ============ -->
-<section class="relative overflow-hidden bg-[#F7F8FA] py-16 sm:py-20 lg:py-24" id="ecosystem">
+<section class="relative overflow-hidden bg-[#F7F8FA] py-10 sm:py-12 lg:py-14" id="ecosystem">
   <div class="relative w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
 
-    <div class="text-center mb-10 lg:mb-14" data-reveal="up" data-reveal-delay="0">
-      <p class="inline-block text-[#41BCEC] text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase border-b-2 border-[#41BCEC] pb-1.5 mb-4">
+    <div class="text-center mb-8 lg:mb-10" data-reveal="up" data-reveal-delay="0">
+      <p class="inline-block text-[#41BCEC] text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase border-b-2 border-[#41BCEC] pb-1.5 mb-3">
         Our Ecosystem
       </p>
       <h2 class="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold tracking-tight leading-tight">
@@ -336,7 +336,7 @@
 
       <!-- Patient Engagement — spans 2 -->
       <article class="eco-card lg:col-span-2 p-6 sm:p-8 flex flex-col justify-between min-h-[230px]" data-reveal="up" data-reveal-delay="60">
-        <div class="eco-icon mb-6" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <circle cx="12" cy="8" r="3.25"/>
             <path d="M5.5 19.5c1.2-3.2 3.5-4.8 6.5-4.8s5.3 1.6 6.5 4.8" stroke-linecap="round"/>
@@ -355,7 +355,7 @@
 
       <!-- HIP Coins -->
       <article class="eco-card p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[230px]" data-reveal="up" data-reveal-delay="120">
-        <div class="eco-icon eco-icon-lg mb-5" aria-hidden="true">
+        <div class="eco-icon eco-icon-lg mb-4" aria-hidden="true">
           <svg class="w-7 h-7 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <rect x="3" y="6" width="18" height="12" rx="2"/>
             <circle cx="12" cy="12" r="2.5"/>
@@ -368,7 +368,7 @@
 
       <!-- Smart Hospital Operations -->
       <article class="eco-card p-6 sm:p-8" data-reveal="up" data-reveal-delay="80">
-        <div class="eco-icon mb-5" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <path d="M4 20V7h16v13M4 20h16M2.5 20h19" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M12 10v4M10 12h4" stroke-linecap="round"/>
@@ -383,7 +383,7 @@
 
       <!-- AI-Powered Automation -->
       <article class="eco-card p-6 sm:p-8" data-reveal="up" data-reveal-delay="140">
-        <div class="eco-icon mb-5" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <rect x="5" y="8" width="14" height="11" rx="2.5"/>
             <path d="M12 8V5M12 5a1.25 1.25 0 1 0 0-2.5A1.25 1.25 0 0 0 12 5Z" stroke-linecap="round"/>
@@ -399,7 +399,7 @@
 
       <!-- White-Label Hospital App -->
       <article class="eco-card eco-card-tint p-6 sm:p-8" data-reveal="up" data-reveal-delay="200">
-        <div class="eco-icon mb-5" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <rect x="7" y="3" width="10" height="18" rx="2.5"/>
             <path d="M10.5 5.5h3" stroke-linecap="round"/>
@@ -414,7 +414,7 @@
 
       <!-- RFID Family Health Card -->
       <article class="eco-card p-6 sm:p-8" data-reveal="up" data-reveal-delay="80">
-        <div class="eco-icon mb-5" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <rect x="3" y="5" width="18" height="14" rx="2"/>
             <path d="M7 12a5 5 0 0 1 5-5M9.5 12a2.5 2.5 0 0 1 2.5-2.5" stroke-linecap="round"/>
@@ -429,7 +429,7 @@
 
       <!-- Patient Relationship CRM -->
       <article class="eco-card p-6 sm:p-8" data-reveal="up" data-reveal-delay="140">
-        <div class="eco-icon mb-5" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <path d="M4 6h16v10H9l-4 3.5V6Z" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M8 10h8M8 12.5h5" stroke-linecap="round"/>
@@ -451,7 +451,7 @@
 
       <!-- WhatsApp Automation -->
       <article class="eco-card p-6 sm:p-8" data-reveal="up" data-reveal-delay="80">
-        <div class="eco-icon mb-5" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <path d="M12 4a8 8 0 0 1 6.9 12L20 20l-4.2-1A8 8 0 1 1 12 4Z" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M9.5 10c.5 2 2 3.5 4 4l1-1.5 2 1" stroke-linecap="round" stroke-linejoin="round"/>
@@ -465,7 +465,7 @@
 
       <!-- Smart Follow-Ups -->
       <article class="eco-card p-6 sm:p-8" data-reveal="up" data-reveal-delay="140">
-        <div class="eco-icon mb-5" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <rect x="3.5" y="5" width="17" height="15" rx="2"/>
             <path d="M3.5 9.5h17M8 3.5v3M16 3.5v3" stroke-linecap="round"/>
@@ -486,7 +486,7 @@
 
       <!-- Executive Analytics -->
       <article class="eco-card p-6 sm:p-8" data-reveal="up" data-reveal-delay="80">
-        <div class="eco-icon mb-5" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <path d="M4 19V5M4 19h16" stroke-linecap="round"/>
             <path d="M8 15l3.5-4.5 3 2.5L18 7" stroke-linecap="round" stroke-linejoin="round"/>
@@ -500,7 +500,7 @@
 
       <!-- Multi-Branch Management -->
       <article class="eco-card p-6 sm:p-8" data-reveal="up" data-reveal-delay="140">
-        <div class="eco-icon mb-5" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <path d="M4 20V8l5-3.5V20M9 20V4.5L20 8v12" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M2.5 20h19" stroke-linecap="round"/>
@@ -514,7 +514,7 @@
 
       <!-- Multi-Branch Management (bottom-left) -->
       <article class="eco-card p-6 sm:p-8" data-reveal="up" data-reveal-delay="80">
-        <div class="eco-icon mb-5" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <path d="M4 20V8l5-3.5V20M9 20V4.5L20 8v12" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M2.5 20h19" stroke-linecap="round"/>
@@ -528,7 +528,7 @@
 
       <!-- Enterprise-Grade Security — wide, right -->
       <article class="eco-card md:col-span-2 lg:col-start-2 lg:col-span-2 p-6 sm:p-8" data-reveal="up" data-reveal-delay="160">
-        <div class="eco-icon mb-5" aria-hidden="true">
+        <div class="eco-icon mb-4" aria-hidden="true">
           <svg class="w-5 h-5 text-[#157AC0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <path d="M12 3.5l7 2.5v5.5c0 4.2-2.9 7.4-7 9-4.1-1.6-7-4.8-7-9V6l7-2.5Z" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -545,10 +545,10 @@
 </section>
 
 <!-- ============ COMPARISON ============ -->
-<section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#FFFFFF_40%,#FFFFFF_70%,#EDF5FB_100%)] py-16 sm:py-20 lg:py-24" id="comparison">
+<section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#FFFFFF_40%,#FFFFFF_70%,#EDF5FB_100%)] py-10 sm:py-12 lg:py-14" id="comparison">
   <div class="container w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
 
-    <div class="text-center mb-10 lg:mb-14" data-reveal="up" data-reveal-delay="0">
+    <div class="text-center mb-8 lg:mb-10" data-reveal="up" data-reveal-delay="0">
       <h2 class="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold tracking-tight leading-tight">
         <span class="block text-hp-dark">More than Hospital Management.</span>
         <span class="block text-hp-blue">Built for Hospital Growth.</span>
@@ -596,7 +596,7 @@
 </section>
 
 <!-- ============ IMPACT CALCULATOR ============ -->
-<!-- <section class=" flex justify-center items-center overflow-hidden bg-white py-16 sm:py-20 lg:py-24" id="impact-calculator">
+<!-- <section class=" flex justify-center items-center overflow-hidden bg-white py-10 sm:py-12 lg:py-14" id="impact-calculator">
   <div class="container w-full lg:px-14 max-w-7xl ">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
@@ -656,10 +656,10 @@
 </section> -->
 
 <!-- ============ OUTCOMES ============ -->
-<section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#F0F7FC_50%,#EDF5FB_100%)] py-16 sm:py-20 lg:py-24" id="outcomes">
+<section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#F0F7FC_50%,#EDF5FB_100%)] py-10 sm:py-12 lg:py-14" id="outcomes">
   <div class="container w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
 
-    <div class="text-center mb-10 lg:mb-14" data-reveal="up" data-reveal-delay="0">
+    <div class="text-center mb-8 lg:mb-10" data-reveal="up" data-reveal-delay="0">
       <h2 class="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold tracking-tight leading-tight">
         <span class="text-hp-dark">Deliver </span><span class="text-hp-blue">Better Outcomes</span><span class="text-hp-dark"> Across Your Hospital</span>
       </h2>
@@ -668,7 +668,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
 
       <article class="bg-white rounded-2xl shadow-[0_8px_30px_rgba(16,24,40,0.06)] p-8 sm:p-10 flex flex-col items-center text-center" data-reveal="up" data-reveal-delay="60">
-        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-[#DCEFFB] mb-6" aria-hidden="true">
+        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-[#DCEFFB] mb-4" aria-hidden="true">
           <svg class="w-7 h-7 text-hp-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <circle cx="9" cy="9" r="2.75"/>
             <path d="M4 18.5c1-2.7 2.9-4 5-4s4 1.3 5 4" stroke-linecap="round"/>
@@ -683,7 +683,7 @@
       </article>
 
       <article class="bg-white rounded-2xl shadow-[0_8px_30px_rgba(16,24,40,0.06)] p-8 sm:p-10 flex flex-col items-center text-center" data-reveal="up" data-reveal-delay="140">
-        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-[#DCEFFB] mb-6" aria-hidden="true">
+        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-[#DCEFFB] mb-4" aria-hidden="true">
           <svg class="w-7 h-7 text-hp-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <rect x="3" y="6.5" width="18" height="11" rx="2"/>
             <circle cx="12" cy="12" r="2.5"/>
@@ -697,7 +697,7 @@
       </article>
 
       <article class="bg-white rounded-2xl shadow-[0_8px_30px_rgba(16,24,40,0.06)] p-8 sm:p-10 flex flex-col items-center text-center" data-reveal="up" data-reveal-delay="220">
-        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-[#DCEFFB] mb-6" aria-hidden="true">
+        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-[#DCEFFB] mb-4" aria-hidden="true">
           <svg class="w-7 h-7 text-hp-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
             <path d="M13 4.5c3.5.5 6 3 6.5 6.5l-4 4c-.5.5-1.2.7-1.9.5l-3.1-.9-.9-3.1c-.2-.7 0-1.4.5-1.9l2.9-5.1Z" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M9.5 14.5L4.5 19.5M8 11.5l-3.5 1L7 10M12.5 16l-1 3.5 2.5-2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -715,7 +715,7 @@
 </section>
 
 <!-- ============ REQUEST ACCESS ============ -->
-<section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#F7FAFD_45%,#EDF5FB_100%)] py-16 sm:py-20 lg:py-24" id="request-access">
+<section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#F7FAFD_45%,#EDF5FB_100%)] py-10 sm:py-12 lg:py-14" id="request-access">
   <div class="relative w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
 
     <div class="access-card w-full p-6 sm:p-10 lg:p-12" data-reveal="scale" data-reveal-delay="0">
@@ -726,7 +726,7 @@
           <h2 class="text-hp-dark text-3xl sm:text-4xl font-bold tracking-tight mb-3">
             Witness the Future
           </h2>
-          <p class="text-hp-muted text-sm sm:text-base leading-relaxed max-w-md mb-10">
+          <p class="text-hp-muted text-sm sm:text-base leading-relaxed max-w-md mb-6">
             Schedule a personalized walkthrough of the HIP ecosystem with one of our Intelligence Architects.
           </p>
 
@@ -758,7 +758,7 @@
               </div>
             </div>
 
-            <div class="mb-10">
+            <div class="mb-6">
               <label for="access-org" class="sr-only">Organization Name</label>
               <input
                 id="access-org"
@@ -793,7 +793,7 @@
 </section>
 
 <!-- ============ PRICING ============ -->
-<!-- <section class="relative overflow-hidden bg-[#F7F8FA] py-16 sm:py-20 lg:py-24" id="pricing">
+<!-- <section class="relative overflow-hidden bg-[#F7F8FA] py-10 sm:py-12 lg:py-14" id="pricing">
   <div class="relative w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-20">
 
     <h2 class="text-center text-hp-dark text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight mb-12 lg:mb-16" data-reveal="up" data-reveal-delay="0">
@@ -936,17 +936,17 @@
 </section> -->
 
 <!-- ============ FAQ ============ -->
-<section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#F7FAFD_45%,#EDF5FB_100%)] py-16 sm:py-20 lg:py-24" id="faq">
+<section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#F7FAFD_45%,#EDF5FB_100%)] py-10 sm:py-12 lg:py-14" id="faq">
   <div class="container w-full max-w-5xl mx-auto px-6 sm:px-10">
 
     <div class="text-center" data-reveal="up" data-reveal-delay="0">
-      <div class="text-[15px] font-bold text-hp-blue tracking-widest uppercase mb-3.5">FAQ</div>
+      <div class="text-[15px] font-bold text-hp-blue tracking-widest uppercase mb-2.5">FAQ</div>
       <h2 class="text-hp-dark text-3xl sm:text-4xl lg:text-[2.5rem] font-bold tracking-tight leading-tight">
         Common Questions
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-10 lg:mt-14">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-8 lg:mt-10">
 
       <details class="group bg-white rounded-2xl shadow-[0_4px_16px_rgba(16,24,40,0.06)]" data-reveal="up" data-reveal-delay="60">
         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 sm:px-7 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
@@ -1082,7 +1082,7 @@
 
     </div>
 
-    <div class="mt-10 text-center" data-reveal="up" data-reveal-delay="500">
+    <div class="mt-8 text-center" data-reveal="up" data-reveal-delay="500">
       <p class="text-lg text-hp-muted mb-4">Still have questions? Talk to our team on a free 30-minute strategy call.</p>
       <a href="#request-access" class="inline-flex items-center justify-center gap-2 bg-hp-blue text-white text-[15px] font-semibold tracking-[0.08em] uppercase px-8 py-3.5 rounded-full hover:bg-hp-blue-dark transition-colors">
         Book Your Strategy Call
