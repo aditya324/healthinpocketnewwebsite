@@ -596,7 +596,7 @@
 </section>
 
 <!-- ============ IMPACT CALCULATOR ============ -->
-<section class=" flex justify-center items-center overflow-hidden bg-white py-16 sm:py-20 lg:py-24" id="impact-calculator">
+<!-- <section class=" flex justify-center items-center overflow-hidden bg-white py-16 sm:py-20 lg:py-24" id="impact-calculator">
   <div class="container w-full lg:px-14 max-w-7xl ">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
@@ -653,7 +653,7 @@
 
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- ============ OUTCOMES ============ -->
 <section class="relative overflow-hidden bg-[linear-gradient(135deg,#EAF4FB_0%,#F0F7FC_50%,#EDF5FB_100%)] py-16 sm:py-20 lg:py-24" id="outcomes">
