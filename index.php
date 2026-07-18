@@ -1,7 +1,7 @@
 <?php include __DIR__ . '/includes/header.php'; ?>
 
 <!-- ============ HERO ============ -->
-<section class="relative overflow-hidden bg-white py-20 lg:py-32" id="hero">
+<section class="relative overflow-hidden bg-white py-24 lg:py-32" id="hero">
 
   <!-- Decorative rings (bottom-left) -->
   <img src="./assets/images/rings.png" alt="" aria-hidden="true"
