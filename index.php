@@ -1,20 +1,20 @@
 <?php include __DIR__ . '/includes/header.php'; ?>
 
 <!-- ============ HERO ============ -->
-<section class="relative overflow-hidden bg-white py-10 lg:py-12" id="hero">
+<section class="relative overflow-hidden bg-white py-16 lg:py-20" id="hero">
 
   <!-- Decorative rings (bottom-left) -->
   <img src="./assets/images/rings.png" alt="" aria-hidden="true"
-    class="pointer-events-none select-none absolute -bottom-22  left-0 w-40 sm:w-52 lg:w-64 opacity-90">
+    class="pointer-events-none select-none absolute -bottom-22 left-0 w-40 sm:w-52 lg:w-64 opacity-90">
 
   <!-- Decorative rings (right, mirrored) -->
   <img src="./assets/images/rings.png" alt="" aria-hidden="true"
     class="pointer-events-none select-none absolute top-1/4 -translate-y-1/2 right-0 w-40 sm:w-52 lg:w-62 opacity-90 -scale-x-100">
 
-  <div class="relative max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1fr_1.25fr] items-center gap-12 lg:gap-8">
+  <div class="relative w-full max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1fr_1.25fr] items-center gap-12 lg:gap-8">
 
     <!-- Left: content -->
-    <div class="flex flex-col lg:items-start text-center lg:text-left gap-4 lg:gap-5">
+    <div class="flex flex-col items-center lg:items-start text-center lg:text-left gap-4 lg:gap-5">
 
       <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-gray-400/60 text-hp-dark text-[15px] font-medium" data-reveal="up" data-reveal-load data-reveal-delay="0">
         <svg class="w-4 h-4 shrink-0" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -44,7 +44,7 @@
     <!-- Right: banner image -->
     <div class="relative" data-reveal="up" data-reveal-load data-reveal-delay="200">
       <img src="./assets/images/banner.png" alt="Doctor consulting with a patient"
-        class="w-full max-w-3xl mx-auto lg:max-w-none lg:scale-125 lg:translate-x-10 lg:origin-left h-auto select-none">
+        class="w-full max-w-3xl mx-auto lg:max-w-none lg:translate-x-6 h-auto select-none">
     </div>
 
   </div>

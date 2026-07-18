@@ -457,6 +457,9 @@
   .min-h-\[620px\] {
     min-height: 620px;
   }
+  .min-h-\[calc\(100svh-25px\)\] {
+    min-height: calc(100svh - 25px);
+  }
   .w-3 {
     width: calc(var(--spacing) * 3);
   }
@@ -1000,14 +1003,11 @@
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
   }
-  .py-18 {
-    padding-block: calc(var(--spacing) * 18);
+  .py-14 {
+    padding-block: calc(var(--spacing) * 14);
   }
-  .py-20 {
-    padding-block: calc(var(--spacing) * 20);
-  }
-  .py-24 {
-    padding-block: calc(var(--spacing) * 24);
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
   }
   .pt-2 {
     padding-top: calc(var(--spacing) * 2);
@@ -1778,23 +1778,10 @@
       max-width: none;
     }
   }
-  .lg\:origin-left {
+  .lg\:translate-x-6 {
     @media (width >= 64rem) {
-      transform-origin: 0;
-    }
-  }
-  .lg\:translate-x-10 {
-    @media (width >= 64rem) {
-      --tw-translate-x: calc(var(--spacing) * 10);
+      --tw-translate-x: calc(var(--spacing) * 6);
       translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-  }
-  .lg\:scale-125 {
-    @media (width >= 64rem) {
-      --tw-scale-x: 125%;
-      --tw-scale-y: 125%;
-      --tw-scale-z: 125%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
     }
   }
   .lg\:grid-cols-2 {
@@ -1882,11 +1869,6 @@
       padding-inline: calc(var(--spacing) * 16);
     }
   }
-  .lg\:py-3 {
-    @media (width >= 64rem) {
-      padding-block: calc(var(--spacing) * 3);
-    }
-  }
   .lg\:py-14 {
     @media (width >= 64rem) {
       padding-block: calc(var(--spacing) * 14);
@@ -1895,16 +1877,6 @@
   .lg\:py-20 {
     @media (width >= 64rem) {
       padding-block: calc(var(--spacing) * 20);
-    }
-  }
-  .lg\:py-28 {
-    @media (width >= 64rem) {
-      padding-block: calc(var(--spacing) * 28);
-    }
-  }
-  .lg\:py-32 {
-    @media (width >= 64rem) {
-      padding-block: calc(var(--spacing) * 32);
     }
   }
   .lg\:pt-14 {
