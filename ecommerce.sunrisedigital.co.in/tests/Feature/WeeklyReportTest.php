@@ -318,6 +318,47 @@ test('a client can compare a social report with the previous published month', f
         ->assertSee(route('dashboard.reports.show', $september), false)
         ->assertDontSee(route('dashboard.reports.show', $draft), false)
         ->assertDontSee(route('dashboard.reports.show', $foreign), false);
+
+    $this->actingAs($customer, 'web')
+        ->get(route('dashboard.reports.show', $september))
+        ->assertSee('September 2026')
+        ->assertSee('October 2026')
+        ->assertSee('+50%')
+        ->assertDontSee('999');
+});
+
+test('a comparison includes a platform that only the later report has', function () {
+    $customer = User::factory()->create();
+    $september = WeeklyReport::factory()->published()->create([
+        'user_id' => $customer->id,
+        'kind' => 'seo',
+        'period_start' => '2026-09-01',
+        'period_end' => '2026-09-30',
+        'body' => [
+            'platforms' => [
+                ['name' => 'Instagram', 'clicks' => '65'],
+            ],
+        ],
+    ]);
+    $october = WeeklyReport::factory()->published()->create([
+        'user_id' => $customer->id,
+        'kind' => 'seo',
+        'period_start' => '2026-10-01',
+        'period_end' => '2026-10-31',
+        'body' => [
+            'platforms' => [
+                ['name' => 'Instagram', 'clicks' => '58'],
+                ['name' => 'Google Image Search', 'clicks' => '47'],
+            ],
+        ],
+    ]);
+
+    $this->actingAs($customer, 'web')
+        ->get(route('dashboard.reports.show', ['report' => $september, 'compare' => $october->uuid]))
+        ->assertSee('Google Image Search')
+        ->assertSee('47')
+        ->assertSee('September 2026')
+        ->assertSee('October 2026');
 });
 
 test('a client can compare a report with any other published report of the same kind', function () {
@@ -372,7 +413,6 @@ test('a client can compare a report with any other published report of the same 
         ->assertSee('July 2026')
         ->assertSee('October 2026')
         ->assertSee('+50%')
-        ->assertDontSee('4,000')
         ->assertDontSee('4242');
 
     $this->actingAs($customer, 'web')

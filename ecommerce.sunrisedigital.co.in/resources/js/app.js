@@ -1,5 +1,6 @@
 import lottie from 'lottie-web';
 import searchAnimation from '../lottie/search.json';
+import whatsappAnimation from '../lottie/whatsapp.json';
 
 document.querySelectorAll('[data-lottie="search"]').forEach((element) => {
     const animation = lottie.loadAnimation({
@@ -12,6 +13,16 @@ document.querySelectorAll('[data-lottie="search"]').forEach((element) => {
 
     element.closest('button')?.addEventListener('mouseenter', () => {
         animation.goToAndPlay(0, true);
+    });
+});
+
+document.querySelectorAll('[data-lottie="whatsapp"]').forEach((element) => {
+    lottie.loadAnimation({
+        container: element,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: whatsappAnimation,
     });
 });
 

@@ -47,4 +47,8 @@ return [
         'webhook_secret' => env('RAZORPAY_WEBHOOK_SECRET'),
     ],
 
+    'whatsapp' => [
+        'number' => env('WHATSAPP_NUMBER'),
+    ],
+
 ];

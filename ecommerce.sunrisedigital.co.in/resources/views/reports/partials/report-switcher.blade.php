@@ -32,7 +32,7 @@
                 <select id="compare-report" name="compare" onchange="this.form.requestSubmit()" class="h-11 w-full rounded-xl border border-[#e4e0da] bg-white px-3 text-sm text-[#1a1a1a] sm:max-w-xs">
                     @if ($insideWeekly)
                         <option value="">The previous week in this report</option>
-                    @elseif ($chosen === null)
+                    @else
                         <option value="">This report on its own</option>
                     @endif
                     @foreach ($options as $option)

@@ -289,3 +289,158 @@ test('a reporter can permanently delete a removed report', function () {
         ->get(route('dashboard.reports.index'))
         ->assertDontSee('November weekly gone');
 });
+
+test('the client sees views across the last six weekly reports', function () {
+    $customer = User::factory()->create();
+    $latest = null;
+
+    foreach ([
+        '2026-09-06' => '100',
+        '2026-09-13' => '200',
+        '2026-09-20' => '300',
+        '2026-09-27' => '400',
+        '2026-10-04' => '500',
+        '2026-10-11' => '600',
+        '2026-10-18' => '700',
+    ] as $start => $views) {
+        $latest = WeeklyReport::factory()->published()->create([
+            'user_id' => $customer->id,
+            'period_start' => $start,
+            'period_end' => Carbon::parse($start)->addDays(6)->toDateString(),
+            'facebook' => ['current' => ['views' => $views]],
+            'instagram' => ['current' => ['total_views' => '0']],
+            'youtube' => [],
+        ]);
+    }
+
+    WeeklyReport::factory()->create([
+        'user_id' => $customer->id,
+        'period_start' => '2026-11-01',
+        'period_end' => '2026-11-07',
+        'facebook' => ['current' => ['views' => '99999']],
+        'instagram' => [],
+        'youtube' => [],
+    ]);
+
+    WeeklyReport::factory()->published()->create([
+        'period_start' => '2026-08-02',
+        'period_end' => '2026-08-08',
+        'title' => 'Someone else week',
+        'facebook' => ['current' => ['views' => '88888']],
+    ]);
+
+    $this->actingAs($customer, 'web')
+        ->get(route('dashboard.reports.show', $latest))
+        ->assertSee('Over time')
+        ->assertSee('The last 6 published weeks. Each point is that week\'s views.')
+        ->assertSeeInOrder([
+            'Views 200',
+            'Views 300',
+            'Views 400',
+            'Views 500',
+            'Views 600',
+            'Views 700',
+        ])
+        ->assertSee('13 Sep')
+        ->assertSee('18 Oct')
+        ->assertDontSee('Views 100')
+        ->assertDontSee('1–7 November 2026')
+        ->assertDontSee('99,999')
+        ->assertDontSee('Someone else week')
+        ->assertDontSee('88,888');
+});
+
+test('one published report does not draw a trend', function () {
+    $customer = User::factory()->create();
+    $report = WeeklyReport::factory()->published()->create([
+        'user_id' => $customer->id,
+    ]);
+
+    $this->actingAs($customer, 'web')
+        ->get(route('dashboard.reports.show', $report))
+        ->assertDontSee('Over time');
+});
+
+test('the client sees search clicks and enquiries across seo reports', function () {
+    $customer = User::factory()->create();
+    WeeklyReport::factory()->published()->create([
+        'user_id' => $customer->id,
+        'kind' => 'seo',
+        'title' => 'September SEO',
+        'period_start' => '2026-09-01',
+        'period_end' => '2026-09-30',
+        'body' => [
+            'platforms' => [
+                ['name' => 'Google', 'clicks' => '40'],
+                ['name' => 'Bing', 'clicks' => '10'],
+            ],
+            'analytics' => [
+                ['label' => 'WhatsApp Clicks', 'current' => '20'],
+                ['label' => 'Call Clicks', 'current' => '5'],
+                ['label' => 'Form Submissions', 'current' => '1'],
+            ],
+        ],
+    ]);
+    $october = WeeklyReport::factory()->published()->create([
+        'user_id' => $customer->id,
+        'kind' => 'seo',
+        'title' => 'October SEO',
+        'period_start' => '2026-10-01',
+        'period_end' => '2026-10-31',
+        'body' => [
+            'platforms' => [
+                ['name' => 'Google', 'clicks' => '80'],
+                ['name' => 'Bing', 'clicks' => '20'],
+            ],
+            'analytics' => [
+                ['label' => 'WhatsApp Clicks', 'current' => '30'],
+                ['label' => 'Call Clicks', 'current' => '10'],
+                ['label' => 'Form Submissions', 'current' => '2'],
+            ],
+        ],
+    ]);
+
+    $this->actingAs($customer, 'web')
+        ->get(route('dashboard.reports.show', $october))
+        ->assertSee('Over time')
+        ->assertSee('Search clicks')
+        ->assertSee('Enquiries')
+        ->assertSeeInOrder([
+            'September 2026: Search clicks 50',
+            'October 2026: Search clicks 100',
+            'September 2026: Enquiries 26',
+            'October 2026: Enquiries 42',
+        ]);
+});
+
+test('the client sees social views across months', function () {
+    $customer = User::factory()->create();
+    WeeklyReport::factory()->published()->create([
+        'user_id' => $customer->id,
+        'kind' => 'social',
+        'period_start' => '2026-09-01',
+        'period_end' => '2026-09-30',
+        'body' => [
+            'instagram' => ['metrics' => [['label' => 'Views', 'value' => '100']]],
+            'facebook' => ['metrics' => [['label' => 'Views', 'value' => '50']]],
+        ],
+    ]);
+    $october = WeeklyReport::factory()->published()->create([
+        'user_id' => $customer->id,
+        'kind' => 'social',
+        'period_start' => '2026-10-01',
+        'period_end' => '2026-10-31',
+        'body' => [
+            'instagram' => ['metrics' => [['label' => 'Views', 'value' => '200']]],
+            'facebook' => ['metrics' => [['label' => 'Views', 'value' => '80']]],
+        ],
+    ]);
+
+    $this->actingAs($customer, 'web')
+        ->get(route('dashboard.reports.show', $october))
+        ->assertSee('The last 2 published months. Each point is that month\'s views.')
+        ->assertSeeInOrder([
+            'September 2026: Views 150',
+            'October 2026: Views 280',
+        ]);
+});

@@ -202,13 +202,20 @@ class WeeklyReport extends Model
             return $chosen;
         }
 
-        if ($this->isSocial() || $this->isSeo() || $this->kind === 'monthly') {
-            return $reports->first(fn (self $report): bool => $report->period_start !== null
-                && $this->period_start !== null
-                && $report->period_start->lt($this->period_start));
+        if (! ($this->isSocial() || $this->isSeo() || $this->kind === 'monthly') || $this->period_start === null) {
+            return null;
         }
 
-        return null;
+        $earlier = $reports->first(fn (self $report): bool => $report->period_start !== null && $report->period_start->lt($this->period_start));
+
+        if ($earlier instanceof self || ! $this->isSocial()) {
+            return $earlier;
+        }
+
+        return $reports
+            ->filter(fn (self $report): bool => $report->period_start !== null && $report->period_start->gt($this->period_start))
+            ->sortBy(fn (self $report): int => $report->period_start?->getTimestamp() ?? 0)
+            ->first();
     }
 
     public function visibleTo(?User $customer, ?Reporter $reporter): bool

@@ -3,9 +3,11 @@
     use App\Support\WeeklyReportFields;
 
     $forClient = request()->routeIs('dashboard.reports.*');
+    $trend = (new WeeklyReportCharts)->trend($report, $comparableReports ?? collect());
 @endphp
 @include('reports.partials.report-switcher')
 @include('reports.partials.highlights')
+@include('reports.partials.trend')
 @if ($report->kind === 'social')
     @include('reports.partials.social-document')
 @elseif ($report->kind === 'seo')

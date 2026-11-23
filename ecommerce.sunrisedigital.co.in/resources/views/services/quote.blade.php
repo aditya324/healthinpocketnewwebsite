@@ -44,6 +44,11 @@
                 </div>
             </div>
             <button type="submit" class="mt-5 inline-flex h-11 w-full items-center justify-center rounded-full bg-[#f5b400] text-sm font-semibold text-[#1a1a1a]">Send request</button>
+            @if ($quoteWhatsappUrl = \App\Support\WhatsApp::enquiryUrl($service))
+                <a href="{{ $quoteWhatsappUrl }}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#25D366] text-sm font-semibold text-white">
+                    Prefer WhatsApp
+                </a>
+            @endif
             <a href="{{ route('services.show', $service) }}" class="mt-3 block text-center text-sm font-medium text-[#6f6a64] underline underline-offset-4">Back to the service</a>
         </form>
     </main>

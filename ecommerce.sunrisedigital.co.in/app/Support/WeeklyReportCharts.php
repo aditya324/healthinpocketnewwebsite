@@ -3,6 +3,7 @@
 namespace App\Support;
 
 use App\Models\WeeklyReport;
+use Illuminate\Support\Collection;
 
 class WeeklyReportCharts
 {
@@ -71,6 +72,108 @@ class WeeklyReportCharts
     }
 
     /**
+     * Views, search clicks, or enquiries across the latest published reports of this kind.
+     *
+     * @param  Collection<int, WeeklyReport>  $others
+     * @return array{
+     *     title: string,
+     *     note: string,
+     *     width: int,
+     *     height: int,
+     *     plot_left: int,
+     *     plot_right: int,
+     *     ticks: list<array{y: float, label: string}>,
+     *     labels: list<array{x: float, text: string}>,
+     *     series: list<array{
+     *         label: string,
+     *         color: string,
+     *         lines: list<string>,
+     *         dots: list<array{cx: float, cy: float, label: string, display: string}>,
+     *         points: list<array{label: string, full: string, amount: float|null, display: string|null}>
+     *     }>
+     * }|null
+     */
+    public function trend(WeeklyReport $report, Collection $others): ?array
+    {
+        $kind = $report->kind ?: 'weekly';
+        $window = $others
+            ->filter(fn (mixed $item): bool => $item instanceof WeeklyReport
+                && $item->isPublished()
+                && ($item->kind ?: 'weekly') === $kind
+                && $item->isNot($report))
+            ->when($report->isPublished(), fn (Collection $reports): Collection => $reports->push($report))
+            ->unique(fn (WeeklyReport $item): int|string => $item->getKey() ?? spl_object_id($item))
+            ->sortBy(fn (WeeklyReport $item): string => sprintf('%010d-%010d', $item->period_start?->getTimestamp() ?? 0, (int) $item->getKey()))
+            ->slice(-6)
+            ->values();
+
+        if ($window->count() < 2) {
+            return null;
+        }
+
+        $definitions = $report->isSeo()
+            ? [
+                ['metric' => 'clicks', 'label' => 'Search clicks', 'color' => '#f5b400'],
+                ['metric' => 'enquiries', 'label' => 'Enquiries', 'color' => '#111111'],
+            ]
+            : [
+                ['metric' => 'views', 'label' => 'Views', 'color' => '#f5b400'],
+            ];
+
+        $series = [];
+
+        foreach ($definitions as $definition) {
+            $points = [];
+
+            foreach ($window as $item) {
+                $amount = $this->trendAmount($item, $definition['metric']);
+                $points[] = [
+                    'label' => $this->trendAxisLabel($item),
+                    'full' => $item->currentPeriodLabel(),
+                    'amount' => $amount,
+                    'display' => $amount === null ? null : $this->displayAmount($amount),
+                ];
+            }
+
+            $filled = count(array_filter($points, fn (array $point): bool => $point['amount'] !== null));
+
+            if ($filled === 0) {
+                continue;
+            }
+
+            $series[] = [
+                'label' => $definition['label'],
+                'color' => $definition['color'],
+                'points' => $points,
+            ];
+        }
+
+        $longest = 0;
+
+        foreach ($series as $item) {
+            $longest = max($longest, count(array_filter($item['points'], fn (array $point): bool => $point['amount'] !== null)));
+        }
+
+        if ($longest < 2) {
+            return null;
+        }
+
+        $plotted = $this->plotTrend($series);
+        $count = $window->count();
+        $span = $report->isMonthly() ? 'month' : 'week';
+        $noun = $count === 1 ? $span : $span.'s';
+        $note = $report->isSeo()
+            ? "The last {$count} published {$noun}. Each point is that {$span}'s search clicks or enquiries."
+            : "The last {$count} published {$noun}. Each point is that {$span}'s views.";
+
+        return [
+            'title' => 'Over time',
+            'note' => $note,
+            ...$plotted,
+        ];
+    }
+
+    /**
      * @return list<array{title: string, note: string, pies: list<array{label: string, slices: list<array{label: string, amount: float, display: string, color: string, path: string}>}>}>
      */
     private function socialCharts(WeeklyReport $report, ?WeeklyReport $earlier): array
@@ -91,14 +194,11 @@ class WeeklyReportCharts
             }
         }
 
-        foreach (data_get($body, 'youtube', []) as $channel) {
-            if (! is_array($channel)) {
-                continue;
-            }
-
-            $earlierChannel = $this->namedRow(data_get($earlierBody, 'youtube', []), (string) ($channel['name'] ?? ''));
+        foreach ($this->rowNames(data_get($body, 'youtube', []), data_get($earlierBody, 'youtube', [])) as $name) {
+            $channel = $this->namedRow(data_get($body, 'youtube', []), $name);
+            $earlierChannel = $this->namedRow(data_get($earlierBody, 'youtube', []), $name);
             $part = $this->viewPart(
-                'YouTube · '.($channel['name'] ?: 'Channel'),
+                'YouTube · '.($name !== '' ? $name : 'Channel'),
                 $this->metricValue($channel['metrics'] ?? [], 'Views'),
                 $this->metricValue($earlierChannel['metrics'] ?? [], 'Views'),
             );
@@ -110,14 +210,11 @@ class WeeklyReportCharts
 
         $locations = [];
 
-        foreach (data_get($body, 'profiles', []) as $profile) {
-            if (! is_array($profile)) {
-                continue;
-            }
-
-            $earlierProfile = $this->namedRow(data_get($earlierBody, 'profiles', []), (string) ($profile['name'] ?? ''));
+        foreach ($this->rowNames(data_get($body, 'profiles', []), data_get($earlierBody, 'profiles', [])) as $name) {
+            $profile = $this->namedRow(data_get($body, 'profiles', []), $name);
+            $earlierProfile = $this->namedRow(data_get($earlierBody, 'profiles', []), $name);
             $part = $this->viewPart(
-                (string) ($profile['name'] ?: 'Location'),
+                $name !== '' ? $name : 'Location',
                 $this->metricValue($profile['metrics'] ?? [], 'Interactions'),
                 $this->metricValue($earlierProfile['metrics'] ?? [], 'Interactions'),
             );
@@ -284,19 +381,16 @@ class WeeklyReportCharts
             }
         }
 
-        foreach ($report->youtube ?? [] as $channel) {
-            if (! is_array($channel)) {
-                continue;
-            }
-
-            $match = $this->namedRow($other->youtube ?? [], (string) ($channel['name'] ?? ''));
+        foreach ($this->rowNames($report->youtube ?? [], $other->youtube ?? []) as $name) {
+            $channel = $this->namedRow($report->youtube ?? [], $name);
+            $match = $this->namedRow($other->youtube ?? [], $name);
             $pair = $this->pair(data_get($channel, $key), data_get($match, $key), $parser);
 
             if ($pair === null) {
                 continue;
             }
 
-            $parts[] = ['label' => 'YouTube · '.($channel['name'] ?: 'Channel'), ...$pair];
+            $parts[] = ['label' => 'YouTube · '.($name !== '' ? $name : 'Channel'), ...$pair];
         }
 
         return $parts;
@@ -374,6 +468,37 @@ class WeeklyReportCharts
     }
 
     /**
+     * @return list<string>
+     */
+    private function rowNames(mixed ...$groups): array
+    {
+        $names = [];
+
+        foreach ($groups as $rows) {
+            if (! is_array($rows)) {
+                continue;
+            }
+
+            foreach ($rows as $row) {
+                if (! is_array($row)) {
+                    continue;
+                }
+
+                $name = trim((string) ($row['name'] ?? ''));
+                $key = strtolower($name);
+
+                if ($key === '' || array_key_exists($key, $names)) {
+                    continue;
+                }
+
+                $names[$key] = $name;
+            }
+        }
+
+        return array_values($names);
+    }
+
+    /**
      * @return array{label: string, current: array{amount: float, display: string}|null, previous: array{amount: float, display: string}|null}|null
      */
     private function viewPart(string $label, ?string $current, ?string $previous = null): ?array
@@ -422,28 +547,13 @@ class WeeklyReportCharts
      */
     private function platformParts(array $platforms, array $previousPlatforms = []): array
     {
+        $currentClicks = $this->platformClicks($platforms);
+        $previousClicks = $this->platformClicks($previousPlatforms);
         $parts = [];
-        $previousClicks = [];
 
-        foreach ($previousPlatforms as $platform) {
-            if (! is_array($platform) || ! is_string($platform['name'] ?? null) || ! is_string($platform['clicks'] ?? null)) {
-                continue;
-            }
-
-            $previousClicks[strtolower($platform['name'])] = $platform['clicks'];
-        }
-
-        foreach ($platforms as $platform) {
-            if (! is_array($platform)) {
-                continue;
-            }
-
-            $name = (string) ($platform['name'] ?: 'Platform');
-            $part = $this->viewPart(
-                $name,
-                is_string($platform['clicks'] ?? null) ? $platform['clicks'] : null,
-                $previousClicks[strtolower($name)] ?? null,
-            );
+        foreach ($this->rowNames($platforms, $previousPlatforms) as $name) {
+            $key = strtolower($name);
+            $part = $this->viewPart($name, $currentClicks[$key] ?? null, $previousClicks[$key] ?? null);
 
             if ($part !== null) {
                 $parts[] = $part;
@@ -451,6 +561,25 @@ class WeeklyReportCharts
         }
 
         return $parts;
+    }
+
+    /**
+     * @param  list<array<string, mixed>>  $platforms
+     * @return array<string, string>
+     */
+    private function platformClicks(array $platforms): array
+    {
+        $clicks = [];
+
+        foreach ($platforms as $platform) {
+            if (! is_array($platform) || ! is_string($platform['name'] ?? null) || ! is_string($platform['clicks'] ?? null)) {
+                continue;
+            }
+
+            $clicks[strtolower($platform['name'])] = $platform['clicks'];
+        }
+
+        return $clicks;
     }
 
     /**
@@ -636,6 +765,16 @@ class WeeklyReportCharts
             $previous = $part['previous'];
 
             if ($current === null || $previous === null || $previous['amount'] <= 0) {
+                if ($current !== null || $previous !== null) {
+                    $changes[] = [
+                        'label' => $part['label'],
+                        'previous' => $previous['display'] ?? '—',
+                        'current' => $current['display'] ?? '—',
+                        'change' => '—',
+                        'direction' => 'flat',
+                    ];
+                }
+
                 continue;
             }
 
@@ -801,6 +940,215 @@ class WeeklyReportCharts
         }
 
         return ['amount' => $amount, 'display' => trim($value)];
+    }
+
+    private function trendAmount(WeeklyReport $report, string $metric): ?float
+    {
+        $platforms = data_get($report->body, 'platforms');
+        $parts = match ($metric) {
+            'clicks' => $this->platformParts(is_array($platforms) ? $platforms : []),
+            'enquiries' => $this->enquiryParts($report),
+            default => $report->isSocial() ? $this->socialViewParts($report) : $this->viewParts($report),
+        };
+
+        return $this->sumCurrent($parts);
+    }
+
+    /**
+     * @return list<array{label: string, current: array{amount: float, display: string}|null, previous: array{amount: float, display: string}|null}>
+     */
+    private function socialViewParts(WeeklyReport $report): array
+    {
+        $body = is_array($report->body) ? $report->body : [];
+        $parts = [];
+
+        foreach (['facebook' => 'Facebook', 'instagram' => 'Instagram'] as $key => $label) {
+            $part = $this->viewPart($label, $this->metricValue(data_get($body, $key.'.metrics'), 'Views'));
+
+            if ($part !== null) {
+                $parts[] = $part;
+            }
+        }
+
+        foreach (data_get($body, 'youtube', []) as $channel) {
+            if (! is_array($channel)) {
+                continue;
+            }
+
+            $part = $this->viewPart('YouTube', $this->metricValue($channel['metrics'] ?? [], 'Views'));
+
+            if ($part !== null) {
+                $parts[] = $part;
+            }
+        }
+
+        return $parts;
+    }
+
+    /**
+     * @return list<array{label: string, current: array{amount: float, display: string}|null, previous: array{amount: float, display: string}|null}>
+     */
+    private function enquiryParts(WeeklyReport $report): array
+    {
+        $body = is_array($report->body) ? $report->body : [];
+        $parts = [];
+
+        foreach (['WhatsApp Clicks', 'Call Clicks', 'Form Submissions'] as $label) {
+            $part = $this->viewPart($label, $this->currentFigure($body, $label));
+
+            if ($part !== null) {
+                $parts[] = $part;
+            }
+        }
+
+        return $parts;
+    }
+
+    /**
+     * @param  list<array{label: string, current: array{amount: float, display: string}|null, previous: array{amount: float, display: string}|null}>  $parts
+     */
+    private function sumCurrent(array $parts): ?float
+    {
+        $total = 0.0;
+        $found = false;
+
+        foreach ($parts as $part) {
+            if ($part['current'] === null) {
+                continue;
+            }
+
+            $found = true;
+            $total += $part['current']['amount'];
+        }
+
+        return $found ? $total : null;
+    }
+
+    private function trendAxisLabel(WeeklyReport $report): string
+    {
+        if ($report->period_start === null) {
+            return $report->currentPeriodLabel();
+        }
+
+        if ($report->isMonthly()) {
+            return $report->period_start->format('M Y');
+        }
+
+        return $report->period_start->format('j M');
+    }
+
+    private function displayAmount(float $amount): string
+    {
+        if (abs($amount - round($amount)) < 0.05) {
+            return number_format($amount);
+        }
+
+        return number_format($amount, 1);
+    }
+
+    /**
+     * @param  list<array{label: string, color: string, points: list<array{label: string, full: string, amount: float|null, display: string|null}>}>  $series
+     * @return array{
+     *     width: int,
+     *     height: int,
+     *     plot_left: int,
+     *     plot_right: int,
+     *     ticks: list<array{y: float, label: string}>,
+     *     labels: list<array{x: float, text: string}>,
+     *     series: list<array{label: string, color: string, lines: list<string>, dots: list<array{cx: float, cy: float, label: string, display: string}>, points: list<array{label: string, full: string, amount: float|null, display: string|null}>}>
+     * }
+     */
+    private function plotTrend(array $series): array
+    {
+        $count = count($series[0]['points']);
+        $max = 0.0;
+
+        foreach ($series as $item) {
+            foreach ($item['points'] as $point) {
+                if ($point['amount'] !== null) {
+                    $max = max($max, $point['amount']);
+                }
+            }
+        }
+
+        $max = $max <= 0 ? 1.0 : $max;
+        $width = 640;
+        $height = 220;
+        $left = 56;
+        $right = 16;
+        $top = 18;
+        $bottom = 36;
+        $plotWidth = $width - $left - $right;
+        $plotHeight = $height - $top - $bottom;
+        $xAt = function (int $index) use ($count, $left, $plotWidth): float {
+            if ($count <= 1) {
+                return $left + ($plotWidth / 2);
+            }
+
+            return $left + (($index / ($count - 1)) * $plotWidth);
+        };
+        $yAt = function (float $amount) use ($max, $top, $plotHeight): float {
+            return $top + $plotHeight - (($amount / $max) * $plotHeight);
+        };
+        $labels = [];
+
+        foreach ($series[0]['points'] as $index => $point) {
+            $labels[] = ['x' => round($xAt($index), 1), 'text' => $point['label']];
+        }
+
+        $ticks = [];
+
+        foreach ([0.0, 0.5, 1.0] as $fraction) {
+            $ticks[] = [
+                'y' => round($yAt($max * $fraction), 1),
+                'label' => $this->displayAmount($max * $fraction),
+            ];
+        }
+
+        foreach ($series as $index => $item) {
+            $lines = [];
+            $dots = [];
+            $segment = [];
+
+            foreach ($item['points'] as $pointIndex => $point) {
+                if ($point['amount'] === null) {
+                    if (count($segment) >= 2) {
+                        $lines[] = implode(' ', $segment);
+                    }
+
+                    $segment = [];
+
+                    continue;
+                }
+
+                $x = round($xAt($pointIndex), 1);
+                $y = round($yAt($point['amount']), 1);
+                $segment[] = $x.','.$y;
+                $dots[] = [
+                    'cx' => $x,
+                    'cy' => $y,
+                    'label' => $point['full'],
+                    'display' => (string) $point['display'],
+                ];
+            }
+
+            if (count($segment) >= 2) {
+                $lines[] = implode(' ', $segment);
+            }
+
+            $series[$index]['lines'] = $lines;
+            $series[$index]['dots'] = $dots;
+        }
+
+        return [
+            'width' => $width,
+            'height' => $height,
+            'plot_left' => $left,
+            'plot_right' => $right,
+            'ticks' => $ticks,
+            'labels' => $labels,
+            'series' => $series,
+        ];
     }
 
     private function quantity(string $value): ?float
